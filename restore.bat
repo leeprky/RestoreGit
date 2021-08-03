@@ -1,5 +1,10 @@
 xcopy /y "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\Backup\Files\index.js" "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app"
 xcopy /y "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\Backup\Files\package.json" "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app"
-del %USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\glasscord.asar /q /f
-del %USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\GlasscordHelper /q /f
-del %USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\Backup /q /f
+del /f /q "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\Backup*.*"
+for /d %%d in ("%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\Backup*.*") do rmdir /s /q "%%d"
+del /f /q "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\GlasscordHelper*.*"
+for /d %%d in ("%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\GlasscordHelper*.*") do rmdir /s /q "%%d"
+del /f /q "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\glasscord.asar*.*"
+for /d %%d in ("%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.37\resources\app\glasscord.asar*.*") do rmdir /s /q "%%d"
+echo RESTORED	
+pause

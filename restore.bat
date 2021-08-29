@@ -11,4 +11,5 @@ del /f /q "%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.39\resources\app\cl
 for /d %%d in ("%USERPROFILE%\AppData\Local\DiscordCanary\app-1.0.39\resources\app\cleanup.bat*.*") do rmdir /s /q "%%d"
 start %USERPROFILE%\AppData\Local\DiscordCanary\Update.exe --processStart DiscordCanary.exe
 echo RESTORED	(IF CANARY LOADS)
-timeout /nobreak
+timeout 6s
+echo DELETE RESTORE.BAT ONCE CLOSED
